@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Scoreboard.Models.Champion>
+
+@*<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Season)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Points)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Team.TeamName)
+        </th>
+        <th></th>
+    </tr>*@
+
+<ul class="collection with-header container" style="margin-top:50px">
+    <li class="collection-header"><h4>Past Champions</h4></li>
+    <li class="collection-item">Be the first House Champion!</li>
+        @foreach (var item in Model)
+        {
+            <li class="collection-item">@Html.DisplayFor(modelItem => item.Season) | @Html.DisplayFor(modelItem => item.Team.TeamName) (@Html.DisplayFor(modelItem => item.Points) Points)</li>
+        }
+
+</ul>
+    
+            
+       
+            
+       
+            
+       
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.ChampID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ChampID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ChampID })*@
+        
+}
+

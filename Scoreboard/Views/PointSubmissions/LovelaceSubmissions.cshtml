@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Scoreboard.Models.PointSubmission>
+
+@{
+    ViewBag.Title = "LovelaceSubmissions";
+}
+
+<h2>LovelaceSubmissions</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Points)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Team.TeamName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Points)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Team.TeamName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SubmissionID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SubmissionID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SubmissionID })
+        </td>
+    </tr>
+}
+
+</table>

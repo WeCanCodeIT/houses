@@ -1,0 +1,22 @@
+﻿/*layout styles for entire site*/
+div.nav-wrapper {
+    background-color:#fff;
+    color:#000;
+}
+div.nav-wrapper a{
+    color:#454545;
+    text-decoration:none;
+    font-size:14px;
+}
+div.nav-wrapper a:hover{
+    background-color:#429fd7;
+}
+#homeBrand {
+    width:200px;
+}
+a.brand-logo.center:hover {
+    background-color:#fff;
+}
+body{
+    background-color:#eee;
+}

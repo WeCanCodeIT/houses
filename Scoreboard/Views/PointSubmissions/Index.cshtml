@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Scoreboard.Models.PointSubmission>
+
+
+
+@*<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+            @Html.DisplayNameFor(model => model.Points)
+
+            @Html.DisplayNameFor(model => model.Description)
+
+            @Html.DisplayNameFor(model => model.Team.TeamName)*@
+    
+
+<ul class="collection with-header container" style="margin-top:50px">
+    <li class="collection-header"><h4>House Points Earned</h4></li>
+
+    @foreach (var item in Model)
+    {
+        <li class="collection-item">@Html.DisplayFor(modelItem => item.Team.TeamName) House earned @Html.DisplayFor(modelItem => item.Points) Points</li>
+    }
+
+</ul>
+

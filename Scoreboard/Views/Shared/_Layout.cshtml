@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WCCI House Points</title>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center"><img id="homeBrand" src="~/images/WCCIT-logo high-res.jpg"/></a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li>@Html.ActionLink("Scoreboard","ViewScore","Teams")</li>
+                <li>@Html.ActionLink("Submit Points", "Create", "PointSubmissions")</li>
+                <li>@Html.ActionLink("Past Champions", "Index", "Champions")</li>
+                <li>@Html.ActionLink("Students","Index","Students")</li>
+            </ul>
+        </div>
+    </nav>
+   
+        @RenderBody()
+        <hr />
+    @*<footer style="margin-left:20px">
+    <div class="footer-copyright">
+            &copy; @DateTime.Now.Year We Can Code IT
+            <a class="grey-text text-lighten-4 right" href="http://bootcamp.wecancodeit.org">Visit WCCI</a>
+            <p>@Html.ActionLink("Admin","Register","Account")</p>
+    </div>
+    </footer>*@
+    <script>
+        
+        $(".button-collapse").sideNav();
+
+        // Show sideNav
+        $('.button-collapse').sideNav('show');
+        // Hide sideNav
+        $('.button-collapse').sideNav('hide');
+
+    </script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
